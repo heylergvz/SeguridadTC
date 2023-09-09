@@ -20,6 +20,7 @@ export class TarjetaComponent {
   cardName      : string              = ''
   month         : number   | string   = 'MM'
   year          : number[] | string   = 'YY'
+  direc           : string              = ''
   cvv           : string              = ''
 
 
@@ -150,6 +151,12 @@ export class TarjetaComponent {
   voltearTarjeta(){
     if( document.getElementById('tarjeta')?.classList.contains('active') ){
       document.getElementById('tarjeta')?.classList.remove('active')
+    }
+  }
+
+  rellenardirec(){
+    if( !document.getElementById('tarjeta')?.classList.contains('active') ) {
+      document.getElementById('tarjeta')?.classList.add('active')
     }
   }
 

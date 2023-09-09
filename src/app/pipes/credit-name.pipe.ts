@@ -12,7 +12,7 @@ export class CreditNamePipe implements PipeTransform {
   transform(name: string): string {
     
     if( name.match(this.chars) || name.match(this.numbers) ){
-      return name= "jhon doe"
+      return name= "Grupo G"
     } else {
       return name
       // Eliminar números

@@ -76,7 +76,7 @@
 /* dandole estilo a los labels */
 .delantera .grupo .label { 
     font-size: 1.08rem;
-    color: #acacac;
+    color: #ffffff;
     margin-bottom: .5rem
 }
 
@@ -214,7 +214,7 @@
 }
 
 .contenedor-btn .btn-abrir-formulario:hover {
-    background: #1850b1
+    background: #ff7070
 }
 
 .contenedor-btn .btn-abrir-formulario.active {
@@ -261,7 +261,7 @@
 
 .formulario-tarjeta input:hover,
 .formulario-tarjeta select:hover {
-    border: 2px solid #93BDED;
+    border: 2px solid #ff0000;
 }
 
 .formulario-tarjeta input:focus,
@@ -309,20 +309,20 @@
     position: relative;
 }
 
-.formulario-tarjeta select {
-    -webkit-appearance: none;
-}
+/* .formulario-tarjeta select { */
+    /* -webkit-animation: none; */
+/* } */
 
 .formulario-tarjeta .grupo-select i {
     position: absolute;
-    color: #CED6E0;
+    color: #ffffff;
     top: 1.07rem;
     right: .9rem;
     transition: .3s ease all;
 }
 
 .formulario-tarjeta .grupo-select:hover i {
-    color: #93bfed;
+    color: #00ff40;
 }
 
 .formulario-tarjeta .btn-enviar {
@@ -330,11 +330,16 @@
     padding: .6rem;
     font-size: 1.5rem;
     color: #fff;
-    background: #2364d2;
+    background: #ca2a2a;
     box-shadow: 2px 2px 10px 0px rgba(0, 85, 212,.4);
     cursor: pointer;
 }
 
 .formulario-tarjeta .btn-enviar:hover{
     background: #1850b1;
+}
+
+h1 {
+    text-align: center;
+    color: white;
 }

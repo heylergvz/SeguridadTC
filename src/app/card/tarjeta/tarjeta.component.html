@@ -1,5 +1,7 @@
 <div class="contenedor">
 
+    <!-- Titulo -->
+    <h1>Solicita tu tarjeta aqui <br> <br></h1>
     <!-- Tarjeta Delantera -->
     <section class="tarjeta" id="tarjeta" #card (click)=" rotate(card) ">
         <div class="delantera">
@@ -22,20 +24,22 @@
                 <div class="flexbox">
                     <div class="grupo">
                         <p class="label" 
-                            >Card Holder</p>
+                            >Nombre</p>
                         <p *ngIf=" cardName !== '' "
                            class="nombre"  
                            id="nombre"> {{ cardName | uppercase | creditName }} 
                         </p>
                         <p *ngIf=" cardName == '' "
                            class="nombre"  
-                           id="nombre"> Jhon Doe 
+                           id="nombre"> Grupo G
                         </p>
                     </div>
+                    <!-- Expiracion 
                     <div class="grupo" id="expiracion">
                         <p class="label">Expiración</p>
                         <p class="expiracion"><span id="mes"> {{ month }}</span>/<span id="year">{{ year }} </span></p>
                     </div>
+                    -->
                 </div>
             </div>
         </div>
@@ -45,7 +49,7 @@
             <div class="barra-magnetica"></div>
             <div class="datos">
                 <div class="grupo" id="ccv">
-                    <p class="label" id="cvvLabel"> CVV </p>
+                    <p class="label" id="cvvLabel"> DPI </p>
                     <p class="ccvP text-end" id="codigo"> {{ cvv }} </p>
                 </div>
             </div>
@@ -65,11 +69,12 @@
     <form class="formulario-tarjeta" #formulario="ngForm"
           id="formulario-tarjeta">
         <div class="grupo">
-            <label for="inputNumero">Número Tarjeta</label>
+            <label for="inputNumero">Número de Tarjeta que desees</label>
             <input  type="text" 
                     id="inputNumero"
                     name="cardNumber"
                     [(ngModel)]="cardNumber"
+                    placeholder=""
                     maxlength="16"
                     minlength="4"
                     pattern="^\d*$"
@@ -84,13 +89,14 @@
                    name="cardName"
                    pattern="/!?^[a-zA-Z\d][a-zA-Z]*$/igm"
                    [(ngModel)]= " cardName "
+                   placeholder="Grupo G"
                    maxlength="24"
                    autocomplete="off"
                    required>
         </div>
 
         <div class="flexbox">
-            <div class="grupo expira">
+            <!-- <div class="grupo expira"> 
                 <label for="selectMes">Expiración</label>
                 <div class="flexbox">
                     <div class="grupo-select">
@@ -117,15 +123,30 @@
                         <i class="fas fa-angle-down"></i>
                     </div>
                 </div>
+            </div> -->
+
+            <div class="direccion"> 
+                <label for="direccion">Direccion</label>
+                <input type="text" 
+                id="inputdirec"
+                name="inputdirec"
+                [(ngModel)]=" direc "
+                placeholder="2 Blvd naranjo 25-55 zona 4"
+                maxlength="40" 
+                autocomplete="off"
+                (click)="rellenardirec"
+                required>
             </div>
+
+
             <div class="grupo ccv">
-                <label for="inputCCV">CVV</label>
+                <label for="inputCCV">DPI</label>
                 <input type="text" 
                        id="inputCCV"
                        name="inputCCV"
                        [(ngModel)]=" cvv "
-                       placeholder=" "
-                       maxlength="3" 
+                       placeholder="012345678"
+                       maxlength="13" 
                        autocomplete="off"
                        (click)="rellenarCVV()"
                        required>
